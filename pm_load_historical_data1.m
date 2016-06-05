@@ -18,10 +18,8 @@ pname2=array1{2}{1};
 if ~strcmp(pname,pname2)
     error('Mismatch in portfolio name!  Check header in csv file.')
 end
-%ts_list=cell(num_funds,1);
 data=cell(num_funds,1);
 for i=1:num_funds
-    %ts_list{i}=array1{1}{i+1};
     data{i}.ts=array1{1}{i+1};
     data{i}.title=array1{2}{i+1};
     if strcmp(array1{3}{i+1},'Listed')
@@ -38,7 +36,6 @@ for i=1:num_funds
     data{i}.num_entries=size(array2{1},1);
     data{i}.date_num=pm_convert_date(array2{1});
     data{i}.date_str=pm_convert_date(data{i}.date_num);
-    %data{i}.date_str=array2{1};
     data{i}.price=array2{5}; %Closing price
     data{i}.price_adj=array2{7}; %Adjusted closing price
 end
