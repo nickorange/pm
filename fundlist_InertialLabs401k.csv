@@ -1,0 +1,32 @@
+30,InertialLabs401k,,,
+PTTAX,PIMCO Total Return Fund,Listed,None,0
+RRTBX,T. Rowe Price Retirement 2020 Fund,Listed,BuySide,30
+RRTCX,T. Rowe Price Retirement 2030 Fund,Listed,BuySide,30
+RRTDX,T. Rowe Price Retirement 2040 Fund,Listed,BuySide,30
+ACSTX,Invesco Comstock Fund,Listed,BuySide,30
+NYVTX,Davis New York Venture Fund,Listed,BuySide,30
+GPAFX,RS Large Cap Alpha Fund,Listed,None,0
+SRVEX,Victory Diversified Stock Fund,Listed,RoundTrip,45
+ALARX,Alger Capital Appreciation Institutional Fund,Listed,None,0
+JARTX,Janus Forty Fund,Listed,RoundTrip,90
+NBSTX,Neuberger Berman Socially Responsive Fund,Listed,None,0
+SSVSX,Victory Special Value Fund,Listed,RoundTripx2,90
+PCVAX,AllianzGI NFJ Small-Cap Value Fund,Listed,None,0
+LAGWX,Lord Abbett Developing Growth Fund,Listed,None,0
+JIGRX,Janus Overseas Fund,Listed,RoundTrip,90
+AIIEX,Invesco International Growth Fund,Listed,BuySide,30
+TGVAX,Thornburg International Value Fund,Listed,None,0
+OPPAX,Oppenheimer Global Fund,Listed,BuySide,30
+GTDDX,Invesco Developing Markets Fund,Listed,BuySide,30
+ODMAX,Oppenheimer Developing Markets Fund,Listed,BuySide,30
+GGHCX,Invesco Global Health Care Fund,Listed,BuySide,30
+PGNAX,Prudential Jennison Natural Resources Fund,Listed,BuySide,90
+OPGSX,Oppenheimer Gold & Special Minerals Fund,Listed,BuySide,30
+FREAX,Nuveen Real Estate Securities Fund,Listed,RoundTripx2,60
+SLMCX,Columbia Seligman Communications and Information Fund,Listed,RoundTrip,30
+IENAX,Invesco Energy Fund,Listed,BuySide,30
+SVSPX,State Street S&P 500 Index Securities Lending Series Fund,Unlisted,None,0
+^MID,State Street S&P MidCap Index Non-Lending Series Fund,Unlisted,None,0
+^RUT,State Street Russell Small Cap Index Securities Lending Series Fund,Unlisted,None,0
+EFA,State Street International Index Securities Lending Series Fund,Unlisted,None,0
+empty,State Street Cash Series U.S. Government Fund ($1 per share),Unlisted,None,0
