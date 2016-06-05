@@ -3,7 +3,8 @@
 %Started: 2016_05_31
 %Last edited: 2016_06_01
 
-%Calculates basic percentage return over specified time period
+%Calculates basic percentage return of price data
+%Optional price data look-up with pm_retrieve_subdata.m
 
 function ret=pm_cal_return1(data,fund,enddate,period,unit)
 if nargin==1

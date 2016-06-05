@@ -1,7 +1,7 @@
 %pm_compute_metrics1.m
 %Nicholas Orange
 %Started: 2016_06_01
-%Last edited: 2016_06_01
+%Last edited: 2016_06_05
 
 %Organizes and performs calculation of all relevant performance metrics
 %tf is number of historical days to calculate:
@@ -23,12 +23,12 @@ for i=1:num_funds
     m{i}.ret_2week=zeros(tf,1);
     m{i}.ret_1month=zeros(tf,1);
     for t=1:tf
-    price_1day=pm_retrieve_subdata(data,i,t,1);
-    price_2day=pm_retrieve_subdata(data,i,t,2);
-    price_3day=pm_retrieve_subdata(data,i,t,3);
-    price_1week=pm_retrieve_subdata(data,i,t,7);
-    price_2week=pm_retrieve_subdata(data,i,t,14);
     price_1month=pm_retrieve_subdata(data,i,t,30);
+    price_1day=price_1month(end-1:end);
+    price_2day=price_1month(end-2:end);
+    price_3day=price_1month(end-3:end);
+    price_1week=price_1month(end-7:end);
+    price_2week=price_1month(end-14:end);
     m{i}.ret_1day(t)=pm_cal_return1(price_1day);
     m{i}.ret_2day(t)=pm_cal_return1(price_2day);
     m{i}.ret_3day(t)=pm_cal_return1(price_3day);
