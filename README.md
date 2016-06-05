@@ -21,3 +21,4 @@ is a personal project to partially or fully automate the annoying and error-pron
 ## Reach functionality
 * Build investment strategy logic to simulate historical decision-making
 * Assess strength of weights in scoring and apply optimization towards better performance prediction
+* Make more portable and faster by re-writing in python
