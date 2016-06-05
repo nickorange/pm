@@ -1,12 +1,13 @@
 %pm_cal_return1.m
 %Nicholas Orange
 %Started: 2016_05_31
-%Last edited: 2016_06_01
+%Last edited: 2016_06_05
 
-%Calculates basic percentage return of price data
+%Calculates basic percentage return and momentum of price data
+%momentum = (return / period)
 %Optional price data look-up with pm_retrieve_subdata.m
 
-function ret=pm_cal_return1(data,fund,enddate,period,unit)
+function [ret,mom]=pm_cal_return1(data,fund,enddate,period,unit)
 if nargin==1
     if ~isnumeric(data)
         error('If giving only one input, input must raw numeric data vector of price.')
@@ -23,4 +24,5 @@ elseif nargin==5
     price=pm_retrieve_subdata(data,fund,enddate,period,unit);
 end
 ret=100*(price(end)-price(1))/price(1); %Return of initial value in percent
+mom=ret/(size(price,1)-1); %Momentum (derivative) of return
 end
