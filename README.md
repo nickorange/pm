@@ -10,10 +10,14 @@ is a personal project to partially or fully automate the annoying and error-pron
 ## Current functionality
 * Pull historical fund data from yahoo finance api
 * Load and organize data into Matlab
-* Compute basic return metrics over arbitrary time periods
+* Compute some performance metrics over arbitrary time periods
+* * Return
+* * Momentum
+* * Moving averages
+* * Polynomial fits
 
 ## Planned functionality
-* Compute more advanced performance metrics ie: bbands, momentum, various fits, etc.
+* Compute more advanced performance metrics ie: bbands, various fits, etc.
 * Construct a remedial weighted scoring system to combine performance metrics into a single value
 * Sort and present highest scoring funds for human decision-making
 * Track investments made and provide portfolio performance summary 
