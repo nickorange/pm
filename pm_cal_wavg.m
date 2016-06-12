@@ -1,13 +1,13 @@
-%pm_cal_return1.m
+%pm_cal_wavg.m
 %Nicholas Orange
-%Started: 2016_05_31
-%Last edited: 2016_06_08
+%Started: 2016_06_11
+%Last edited: 2016_06_11
 
-%Calculates basic PERCENTAGE return and momentum of price data
-%momentum = (return / period)
+%Calculates weighted average of price data
 %Optional price data look-up with pm_retrieve_subdata.m
+%Use in a loop to generate weighted moving averages
 
-function out=pm_cal_return1(data,fund,enddate,window,unit)
+function wavg=pm_cal_wavg(data,fund,enddate,window,unit)
 if nargin==1
     if ~isnumeric(data)
         error('If giving only one input, input must raw numeric data vector of price.')
@@ -23,7 +23,8 @@ elseif nargin==4
 elseif nargin==5
     price=pm_retrieve_subdata(data,fund,enddate,window,unit);
 end
-ret=100*(price(end)-price(1))/price(1); %Return of initial value in percent
-mom=ret/(size(price,1)-1); %Momentum (derivative) of return
-out=[ret,mom];
+n=size(price,1);
+w=1:n;
+price_w=price.*w';
+wavg=2*sum(price_w)/(n*(n+1));
 end

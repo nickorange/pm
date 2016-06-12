@@ -1,7 +1,7 @@
 %pm_cal_polyfit1.m
 %Nicholas Orange
 %Started: 2016_06_04
-%Last edited: 2016_06_05
+%Last edited: 2016_06_08
 
 %Fits a polynomial (order p_n) to price data
 %Outputs the slope and curvature at last date and polynomial coefficients
@@ -30,7 +30,7 @@ dpf=polyder(pf);
 slp=polyval(dpf,x(end));
 ddpf=polyder(dpf);
 crv=polyval(ddpf,x(end));
-stats=[slp;crv];
+stats=[slp,crv];
 if 0
     figure(100)
     plot(x,y,'b')
@@ -46,5 +46,6 @@ if 0
     figure(102)
     plot(x,polyval(ddpf,x))
     title('2nd Derivative of Polyfit')
+    figure(100)
 end
 end

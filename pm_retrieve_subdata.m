@@ -6,7 +6,7 @@
 %Grabs desired price data from data structure as per inputs
 %Output is flipped to be date ascending (chronological)
 
-function out=pm_retrieve_subdata(data,fund,enddate,period,unit)
+function out=pm_retrieve_subdata(data,fund,enddate,window,unit)
 if nargin<4
     error('Data, Fund, End Date, and Time Period are required inputs to retrieve price data.')
 elseif nargin>4
@@ -15,11 +15,11 @@ elseif nargin>4
     else
         if strcmp(unit,'day')||strcmp(unit,'days')
         elseif strcmp(unit,'week')||strcmp(unit,'weeks')
-            period=period*7;
+            window=window*7;
         elseif strcmp(unit,'month')||strcmp(unit,'months')
-            period=period*30; %1 month = 30 days regardless of month            
+            window=window*30; %1 month = 30 days regardless of month            
         elseif strcmp(unit,'year')||strcmp(unit,'years')
-            period=period*365;
+            window=window*365;
         else
             error('Unit must be either: ''days'', ''weeks'', ''months'' or ''years''')
         end
@@ -39,6 +39,6 @@ if ischar(enddate)
 else
     df=enddate;
 end
-di=df+period;
+di=df+window;
 out=flipud(data{i}.price(df:di));
 end
