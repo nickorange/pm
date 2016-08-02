@@ -12,10 +12,13 @@ function m=pm_compute_metrics1(data,tf)
 if nargin<2
     error('Data and time period inputs required.')
 end
-fprintf('Computing performance metrics for last %i days... ',tf)
+fprintf('***** Computing performance metrics *****\n')
+fprintf('Assessing the last %i days... Fund   ',tf)
 num_funds=size(data,1);
 m=cell(num_funds,1);
 for i=1:num_funds
+    fprintf('\b\b\b% 3.0f',i)
+    m{i}.period=tf;
     m{i}.ret_1day=zeros(tf,2);
     m{i}.ret_2day=zeros(tf,2);
     m{i}.ret_3day=zeros(tf,2);
@@ -49,13 +52,22 @@ for i=1:num_funds
         m{i}.ret_1month(t,:)=pm_cal_return1(price_1month);
         m{i}.poly_1week(t,:)=pm_cal_polyfit1(price_1week);
         m{i}.poly_2week(t,:)=pm_cal_polyfit1(price_2week);
-        m{i}.sma_1week(t)=pm_cal_savg(price_1week);
-        m{i}.sma_2week(t)=pm_cal_savg(price_2week);
-        m{i}.wma_1week(t)=pm_cal_wavg(price_1week);
-        m{i}.wma_2week(t)=pm_cal_wavg(price_2week);
-        %More metrics...
+        m{i}.sma_1week(t,1)=pm_cal_savg(price_1week);
+        m{i}.sma_2week(t,1)=pm_cal_savg(price_2week);
+        m{i}.wma_1week(t,1)=pm_cal_wavg(price_1week);
+        m{i}.wma_2week(t,1)=pm_cal_wavg(price_2week);
     end
+    ema1=pm_cal_eavg(.1,data,i,1,tf+30);
+    ema2=pm_cal_eavg(.2,data,i,1,tf+30);
+    m{i}.ema1(:,1)=ema1(1:tf);
+    m{i}.ema2(:,1)=ema2(1:tf);
+    m{i}.sma_1week(1:end-1,2)=-diff(m{i}.sma_1week(:,1));
+    m{i}.sma_2week(1:end-1,2)=-diff(m{i}.sma_2week(:,1));
+    m{i}.wma_1week(1:end-1,2)=-diff(m{i}.wma_1week(:,1));
+    m{i}.wma_2week(1:end-1,2)=-diff(m{i}.wma_2week(:,1));
+    m{i}.ema1(1:end-1,2)=-diff(m{i}.ema1(:,1));
+    m{i}.ema2(1:end-1,2)=-diff(m{i}.ema2(:,1)); 
 end
-m=pm_score_metrics1(m);
-fprintf('Done.\n')
+fprintf('\b\b\b\b\b\b\bDone.\n')
+fprintf('Computation of metrics is complete.\n\n')
 end

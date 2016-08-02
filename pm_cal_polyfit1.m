@@ -11,8 +11,8 @@ function [stats,pf]=pm_cal_polyfit1(data,fund,enddate,period,unit)
 if nargin==1
     if ~isnumeric(data)
         error('If giving only one input, input must raw numeric data vector of price.')
-    elseif size(data,1)<3
-        error('Input data is too small.  Must have at least 2 values in vertical vector.')
+    elseif size(data,1)<5
+        error('Input data is too small.  Must have at least 5 values in vertical vector.')
     else
         y=data;
     end

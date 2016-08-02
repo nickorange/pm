@@ -10,6 +10,7 @@ function data=pm_update_data1(pname)
 if nargin<1
     error('Portfolio Name input required.')
 end
+fprintf('***** Performing data update *****\n')
 fprintf('Running puller3.py... ')
 pm_run_puller(pname);
 fprintf('Done.\nLoading data from pulled csv files... ')
@@ -19,5 +20,5 @@ data=pm_interpolate_data1(data);
 fprintf('Done.\nSaving... ')
 save_path=['./data_',pname,'/data_recent.mat'];
 save(save_path,'data')
-fprintf('Done.\nData update complete.\n\n')
+fprintf('Done.\nData update is complete.\n\n')
 end

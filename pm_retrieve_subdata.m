@@ -1,9 +1,9 @@
 %pm_retrieve_subdata.m
 %Nicholas Orange
 %Started: 2016_06_01
-%Last edited: 2016_06_01
+%Last edited: 2016_08_02
 
-%Grabs desired price data from data structure as per inputs
+%Grabs desired ADJUSTED price data from data structure as per inputs
 %Output is flipped to be date ascending (chronological)
 
 function out=pm_retrieve_subdata(data,fund,enddate,window,unit)
@@ -40,5 +40,5 @@ else
     df=enddate;
 end
 di=df+window;
-out=flipud(data{i}.price(df:di));
+out=flipud(data{i}.price_adj(df:di));
 end

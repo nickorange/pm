@@ -11,8 +11,8 @@ function wavg=pm_cal_wavg(data,fund,enddate,window,unit)
 if nargin==1
     if ~isnumeric(data)
         error('If giving only one input, input must raw numeric data vector of price.')
-    elseif size(data,1)<2
-        error('Input data is too small.  Must have at least 2 values in vertical vector.')
+    elseif size(data,1)<1
+        error('Input data is too small.  Must have at least 1 value in vertical vector.')
     else
         price=data;
     end
