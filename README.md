@@ -1,4 +1,4 @@
-Author: Nick Orange testing
+Author: Nick Orange
 
 Contact: n.orange82@gmail.com
 
